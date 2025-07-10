@@ -1,5 +1,6 @@
 /*jshint esversion: 8 */
 require('dotenv').config();
+console.log('→ MONGO_URL is:', JSON.stringify(process.env.MONGO_URL));
 const express = require('express');
 const cors = require('cors');
 const pinoLogger = require('./logger');
@@ -11,7 +12,7 @@ const {loadData} = require("./util/import-mongo/index");
 const app = express();
 app.use("*",cors());
 const port = 3060;
-
+console.log('→ MONGO_URL is:', JSON.stringify(process.env.MONGO_URL));
 // Connect to MongoDB; we just do this one time
 connectToDatabase().then(() => {
     pinoLogger.info('Connected to DB');
