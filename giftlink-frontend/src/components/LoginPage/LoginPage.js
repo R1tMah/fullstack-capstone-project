@@ -12,7 +12,7 @@ function LoginPage() {
     // insert code here to create handleLogin function and include console.log
     const handleLogin = async () => {
         console.log("Register invoked");
-        console.log({ firstName, lastName, email, password });
+        console.log({ email, password });
     }
         return (
       <div className="container mt-5">
