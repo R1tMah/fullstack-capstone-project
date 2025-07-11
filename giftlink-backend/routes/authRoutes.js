@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const connectToDatabase = require('../models/db');
 const router = express.Router();
 const dotenv = require('dotenv');
+
+dotenv.config();
 const pino = require('pino');  // Import Pino logger
 
 //Task 1: Use the `body`,`validationResult` from `express-validator` for input validation
@@ -12,7 +14,6 @@ const { body, validationResult } = require('express-validator');
 
 const logger = pino();  // Create a Pino logger instance
 
-dotenv.config();
 const JWT_SECRET = process.env.JWT_SECRET;
 
 router.post('/register', async (req, res) => {
